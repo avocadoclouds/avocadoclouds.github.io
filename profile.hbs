@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatiable" content="IE-edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/style-profile.css">
+  <link rel="stylesheet" href="/style-timer.css">
+  <link rel="stylesheet" href="/style-todo.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <title> Timinuto: Dashboard</title>
+</head>
+
+
+<body>
+  {{!-- navigation html --}}
+  <header>
+  <a href="#" class="logo"><span>Timi</span>nuto</a>
+
+  <input type="checkbox" id="menu-bar">
+  <label for="menu-bar" class="fas fa-bars"></label>
+
+
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/profile">Profile</a>
+        <a href="/reports">Reports</a>
+        <a href="/auth/logout">Logout</a>
+    </nav>
+
+  </header>
+
+  {{!-- hello user html --}}
+
+  {{!-- <section class="welcome-user">
+    <div class="greeting">
+      <h4 class="card-title"> Hello {{username}}</h4>
+    </div>
+  </section> --}}
+
+  {{!-- timer and timer input html --}}
+
+   <section class="todo">
+
+    <div class="wrapper">
+      <div class="task-input">
+        <!-- <img src="bars-icon.svg" alt="icon"> -->
+        <input type="text" placeholder="Add a new task">
+      </div>
+      <div class="controls">
+        <div class="filters">
+          <span class="active" id="all">All</span>
+          <span id="pending">Pending</span>
+          <span id="completed">Completed</span>
+        </div>
+        <button class="clear-btn">Clear All</button>
+      </div>
+      <ul class="task-box"></ul>
+    </div>
+
+
+  </section>
+
+    {{!-- to do list html --}}
+
+  <section class="clock">
+    <div class="watch">
+      <div class="time">
+        00:00:00
+      </div>
+
+      <div class="controlss">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+      </div>
+
+    </div>
+      
+   
+    <div class="timeinput">
+      <form class="row g-3" action="/auth/add" method="POST">
+        <div class="col-auto">
+          <input type="text" class="form-control" id="inputPassword2" name="taskname" placeholder="Task Name">
+        </div>
+        <div class="col-auto">
+          <input type="text" class="form-control" id="inputPassword2" name="time" placeholder="Time in minutes">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">Add</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+
+
+  {{!-- notes and spotify html --}}
+  {{!-- <aside>
+    <div class="notes">
+      hhhhh
+    </div>
+  </aside>
+
+  <aside>
+    <div class="spotify">
+      hhhhhh
+    </div>
+  </aside> --}}
+
+  {{#if message }}
+      <h4 class="alert alert-danger mt-4">{{message}}</h4>
+    {{/if}}
+  
+  <script src="script.js"></script>
+  <script src="script-todo.js"></script>
+  <script src="script-time.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="/public/todo.js"></script>
+</body>
+</html>
